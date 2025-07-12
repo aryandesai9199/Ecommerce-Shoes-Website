@@ -1,0 +1,164 @@
+{% extends "Main.html" %}
+{% block start %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us - Stylish Shoes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        * {
+            
+            font-family: "Oswald", sans-serif;
+            /* background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%); */
+        }
+        .contact-form {
+            background: rgba(255,255,255,0.95);
+            padding: 55px 45px 45px 45px;
+            border-radius: 28px;
+            box-shadow: 0 12px 48px rgba(161, 140, 209, 0.18);
+            max-width: 720px;
+            margin: 70px auto 40px auto;
+            animation: fadeIn 1s cubic-bezier(.4,0,.2,1);
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 32px;
+            color: #000000;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            font-family: "Montserrat", sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 28px;
+        }
+        .form-control {
+            border-radius: 12px;
+            padding-left: 48px;
+            box-shadow: none;
+            border: 1.5px solid #e0e7ff;
+            transition: 0.3s;
+            font-size: 1.09rem;
+            background: #f8fafc;
+        }
+        .form-control:focus {
+            border-color: #000000;
+            box-shadow: 0 0 0 0.2rem rgba(123, 47, 242, 0.10);
+            background: #fff;
+        }
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            left: 17px;
+            transform: translateY(-50%);
+            color: #000000;
+            font-size: 1.35rem;
+            z-index: 2;
+        }
+        textarea.form-control {
+            resize: none;
+            padding-left: 48px;
+            padding-top: 16px;
+        }
+        .btn-submit {
+            background: linear-gradient(90deg, #000000 60%, #f357a8 100%);
+            color: white;
+            padding: 15px 0;
+            border: none;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 1.13rem;
+            transition: 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 22px rgba(161, 140, 209, 0.13);
+            letter-spacing: 0.7px;
+        }
+        .btn-submit:hover {
+            background: linear-gradient(90deg, #f357a8 60%, #000000 100%);
+            box-shadow: 0 0 22px #a18cd144;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 38px;
+            color: #000000;
+            font-size: 1.09rem;
+            opacity: 0.88;
+            letter-spacing: 0.2px;
+        }
+        .social-links {
+            margin-top: 18px;
+            text-align: center;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #fff;
+            background: linear-gradient(135deg, #000000 60%, #f357a8 100%);
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            box-shadow: 0 2px 8px #a18cd133;
+        }
+        .social-links a:hover {
+            background: linear-gradient(135deg, #f357a8 60%, #000000 100%);
+            color: #fff;
+            transform: scale(1.12);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-form">
+        <h2><i class="bi bi-chat-dots-fill me-2"></i>Get in Touch</h2>
+        <form method="POST" enctype="multipart/form-data" autocomplete="off">
+            {% csrf_token %}
+            <div class="form-group">
+                <i class="bi bi-person-fill"></i>
+                <input type="text" class="form-control" placeholder="Full Name" name="name" required>
+            </div>
+            <div class="form-group">
+                <i class="bi bi-envelope-fill"></i>
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit"><i class="bi bi-send-fill me-2"></i>Send Message</button>
+        </form>
+        <div class="contact-info mt-4">
+            <i class="bi bi-telephone-fill"></i> +1 91 6353 2935 66 &nbsp; | &nbsp;
+            <i class="bi bi-envelope"></i> aryandesai9199.com
+        </div>
+        <div class="social-links">
+            <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

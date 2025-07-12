@@ -1,0 +1,148 @@
+{% extends "Main.html"%}
+{% block start%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Stylish Shoes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Oswald", sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container my-5">
+        <div class="d-flex align-items-center justify-content-between my-4">
+            <h5>Featured Products</h5>
+            <h6>Premium Products</h6>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item8.jpg' %}" class="card-img-top" alt="Featured 1">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item5.jpg' %}" class="card-img-top" alt="Featured 2">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item4.jpg' %}" class="card-img-top" alt="Featured 3">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item6.jpg' %}" class="card-img-top" alt="Featured 5">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container my-5">
+        <div class="d-flex align-items-center justify-content-between my-4">
+            <h5>Latest Products</h5>
+            <h6>Premium Products</h6>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item6.jpg' %}" class="card-img-top" alt="Featured 1">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item8.jpg' %}" class="card-img-top" alt="Featured 2">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item9.jpg' %}" class="card-img-top" alt="Featured 3">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item10.jpg' %}" class="card-img-top" alt="Featured 5">
+                    <div class="card-body">
+                        <p class="card-text">Running shoes for men $99 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container my-5">
+        <div class="d-flex align-items-center justify-content-between my-4">
+            <h5>Best Sellers</h5>
+            <h6>Premium Products</h6>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item2.jpg' %}" class="card-img-top" alt="Best Seller 1">
+                    <div class="card-body">
+                        <p class="card-text">Classic sneakers $89</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item3.jpg' %}" class="card-img-top" alt="Best Seller 2">
+                    <div class="card-body">
+                        <p class="card-text">Leather boots $120</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item7.jpg' %}" class="card-img-top" alt="Best Seller 3">
+                    <div class="card-body">
+                        <p class="card-text">Sports sandals $59</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
+                    <img src="{% static 'images/card-item1.jpg' %}" class="card-img-top" alt="Best Seller 4">
+                    <div class="card-body">
+                        <p class="card-text">Casual loafers $75</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
+
+{% endblock %}

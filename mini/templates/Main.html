@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bs5/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Varela+Round&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: "Libre Baskerville", serif;
+        }
+    </style>
+</head>
+<body>
+    <header class="py-3 bg-white shadow-sm">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="d-flex align-items-center text-decoration-none">
+                <img src="{% static 'images/main-logo.png' %}" alt="Logo" style="height: 50px;">
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/home/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/about/">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/page/">Page</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/shop/">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="d-flex align-items-center gap-3">
+                <a href="/login1/" class="text-dark fs-5"><i class="fa fa-user"></i></a>
+                <a href="#" class="text-dark fs-5"><i class="fa fa-shopping-cart"></i></a>
+                <a href="#" class="text-dark fs-5"><i class="fa fa-search"></i></a>
+            </div>
+        </div>
+    </header>
+    {% block start%}
+
+    {% endblock%}
+    
+    <hr style="margin: 0;">
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+                <div class="col">
+                    <h5 class="mb-3 text-uppercase fw-bold">Info</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-dark">Track Order</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Blog</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Privacy Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Shipping</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Contact</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Help</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h5 class="mb-3 text-uppercase fw-bold">About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-dark">History</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Team</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Services</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Company</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Manufacture</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Wholesale</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Retail</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h5 class="mb-3 text-uppercase fw-bold">Popular</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-dark">Prices Drop</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">New Products</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Best Sales</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Stores</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Login</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h5 class="mb-3 text-uppercase fw-bold">Get In Touch</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-map-marker-alt me-2"></i>123 Main Street, Toulouse, France</li>
+                        <li><i class="fa fa-phone me-2"></i>Call: (+33) 800 456 789-987</li>
+                        <li><i class="fa fa-envelope me-2"></i><a href="mailto:contact@yourwebsite.com" class="text-decoration-none text-dark"><b>contact@yourwebsite.com</b></a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h5 class="mb-3 text-uppercase fw-bold">Follow Us</h5>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="text-dark fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-muted small">
+                &copy; Stylish 2023. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'bs5/js/bs5.bundle.min.js' %}"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+</body>
+</html>

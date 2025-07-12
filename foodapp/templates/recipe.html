@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo of Food project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #8360c3, #2ebf91);
+      min-height: 100vh;
+
+    }
+
+    .fffrom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #2ebf91;
+    }
+
+    .btn-custom {
+      background-color: #2ebf91;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #249d78;
+    }
+
+    table {
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #2ebf91;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #e6f7ff;
+    }
+
+    tr:hover {
+      background-color: #d1e7dd;
+    }
+
+    h1 {
+      color: #2ebf91;
+    }
+
+    .text-danger {
+      color: #dc3545 !important;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .fw-bold {
+      font-weight: bold;
+    }
+
+    .fw-bolder {
+      font-weight: bolder;
+    }
+
+    .mb-5 {
+      margin-bottom: 3rem !important;
+    }
+
+    .mb-3 {
+      margin-bottom: 1rem !important;
+    }
+
+    .d-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .btn-lg {
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+    }
+
+    .mt-5 {
+      margin-top: 3rem !important;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table th,
+    .table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    .table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #2ebf91;
+      color: white;
+    }
+
+    .table tr:hover {
+      background-color: #d1e7dd;
+    }
+
+    .table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .table tr:nth-child(odd) {
+      background-color: #e6f7ff;
+    }
+
+    .table tr {
+      transition: background-color 0.3s;
+    }
+
+    .table td {
+      text-align: center;
+    }
+
+    .table th,
+    .table td {
+      padding: 15px;
+    }
+
+    .table th {
+      background-color: #2ebf91;
+      color: white;
+    }
+
+    .table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .table tr:nth-child(odd) {
+      background-color: #e6f7ff;
+    }
+
+    .table tr:hover {
+      background-color: #d1e7dd;
+    }
+
+    .table td {
+      text-align: center;
+    }
+
+    .table th,
+    .table td {
+      padding: 15px;
+    }
+
+    .table th {
+      background-color: #2ebf91;
+      color: white;
+    }
+
+    .table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .table tr:nth-child(odd) {
+      background-color: #e6f7ff;
+    }
+
+    .table tr:hover {
+      background-color: #d1e7dd;
+    }
+
+    .table td {
+      text-align: center;
+    }
+
+    .table th,
+    .table td {
+      padding: 15px;
+    }
+
+    .table th {
+      background-color: #2ebf91;
+      color: white;
+    }
+
+    .btn-custom {
+      background-color: #2ebf91;
+      color: white;
+      border: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-custom:hover {
+      background-color: #249d78;
+      transform: scale(1.05);
+    }
+
+    .form-container:hover {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .table th,
+    .table td {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .table th:hover,
+    .table td:hover {
+      background-color: #249d78;
+      color: white;
+    }
+
+    h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-title {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-control:focus {
+      border-color: #2ebf91;
+      box-shadow: 0 0 5px rgba(46, 191, 145, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 class="fw-bold text-center mb-5">Welcome To My Food App</h1>
+
+  <div class="fffrom">
+    <div class="form-container"
+      style="background: linear-gradient(to bottom, #ffffff, #f0f8ff); border: 2px solid #2ebf91; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s;">
+      <h3 class="form-title" style="font-size: 1.8rem; color: #2ebf91; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">
+        Submit Your Info</h3>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="recipe name" class="form-label" style="font-weight: bold; color: #2ebf91;">
+            <i class="bi bi-card-text"></i> Recipe Name
+          </label>
+          <input type="text" class="form-control" id="name" placeholder="🍴 Enter your recipe name" name="name" required
+            style="border: 2px solid #2ebf91; box-shadow: 0 0 10px rgba(46, 191, 145, 0.5); padding: 10px; font-size: 1rem;">
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label" style="font-weight: bold; color: #2ebf91;">
+            <i class="bi bi-pencil-square"></i> Description
+          </label>
+          <textarea class="form-control" id="description" rows="3"
+            placeholder="✍️ Write something amazing about your recipe..." name="description" required
+            style="border: 2px solid #2ebf91; box-shadow: 0 0 10px rgba(46, 191, 145, 0.5); resize: none; padding: 10px; font-size: 1rem;"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label" style="font-weight: bold; color: #2ebf91;">
+            <i class="bi bi-upload"></i> Upload Image of Recipe
+          </label>
+          <input class="form-control" type="file" id="image" name="image"
+            style="border: 2px solid #2ebf91; box-shadow: 0 0 10px rgba(46, 191, 145, 0.5); padding: 10px;">
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-custom btn-lg"
+            style="background-color: #2ebf91; color: white; border: none; transition: background-color 0.3s, transform 0.3s; font-size: 1.2rem;">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- {{tables}} -->
+  <h1 class="text-center fw-bolder mt-5">All Recipes</h1>
+  <table class="table">
+    <tr style="border: 2px;">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Delete</th>
+      <th>Update</th>
+      <th>Image</th>
+    </tr>
+    {% for table in tables %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{table.name}}</td>
+      <td>{{table.description}}</td>
+      <td>
+        <form method="POST" action="{% url 'delete_recipe' table.id %}" style="display: inline;">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-sm"
+            onclick="return confirm('Are you sure you want to delete this recipe?');">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+        </form>
+      </td>
+      <td>
+        <a href="/food/update_recipe/{{table.id}} " class="btn btn-warning btn-sm">
+          <i class="bi bi-pencil-square"></i> Update
+        </a>
+      </td>
+      <td>
+        <img src="/media/{{table.image}}" alt="img" style="width: 100px; height: 100px; border-radius: 10px;">
+      </td>
+    </tr>
+    {%endfor%}
+  </table>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

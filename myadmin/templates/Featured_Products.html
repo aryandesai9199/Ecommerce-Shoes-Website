@@ -1,0 +1,24 @@
+{% extends "master_page.html" %}
+{% block start %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bs5/css/bootstrap.min.css' %}">
+    <title>Featured Products</title>
+</head>
+<body>
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold mb-0">Featured Product List</h2>
+            <a href="/myadmin/add-featured-products/" class="btn btn-success shadow-sm">
+                <i class="fa fa-plus me-2"></i>Add Featured Product
+            </a>
+        </div>
+        <!-- Featured products list will go here -->
+    </div>
+</body>
+</html>
+{% endblock %}

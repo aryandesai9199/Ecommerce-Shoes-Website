@@ -1,0 +1,174 @@
+{% extends "Main.html" %}
+{% load static %}
+{% block start %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Stylish Shoes</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        * {
+            font-family: "Oswald", sans-serif;
+        }
+        .about-banner-img {
+            max-width: 500px;
+            border-radius: 1rem;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+        }
+        .about-main-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .about-title {
+            color: #1a237e;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        .about-desc {
+            color: #333;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .about-project-name {
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .about-feature-title, .about-feature-title2 {
+            color: #1976d2;
+        }
+        .about-feature-title2 {
+            color: #388e3c;
+        }
+        .btn-gradient {
+            background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+            color: #fff;
+            border: none;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
+            color: #fff;
+        }
+        .about-projects-btn {
+            margin-left: 0.5rem;
+        }
+        .about-main-heading {
+            color: #0d47a1;
+        }
+        .about-main-lead {
+            color: #444;
+        }
+        .about-features-card {
+            background: #f1f8e9;
+            border-radius: 1rem;
+        }
+        .about-features-title {
+            color: #388e3c;
+        }
+        .about-main-footer {
+            color: #666;
+        }
+        .about-home-btn {
+            margin-top: 1rem;
+        }
+        .about-delay {
+            animation-delay: 0.3s;
+        }
+        .about-svg-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+        }
+        .about-text-gradient {
+            background: linear-gradient(90deg,#1976d2,#388e3c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .about-z-1 {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <!-- <div class="mb-5 text-center">
+            <img src="https://img.freepik.com/free-photo/pair-trainers_144627-3799.jpg?w=740"
+                 alt="About Shoes Banner"
+                 class="img-fluid rounded shadow-lg animate__animated animate__fadeInDown about-banner-img">
+        </div> -->
+
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10">
+            <h1 class="display-5 fw-bold about-main-heading mb-3 about-text-gradient">Welcome to Shoe Store</h1>
+            <p class="lead about-main-lead mb-4">
+                At <span class="about-project-name">Shoe Store</span>, we are passionate about helping you put your best foot forward. Our mission is to offer a diverse collection of shoes that combine comfort, durability, and the latest trends. Whether you are looking for athletic sneakers, elegant formal shoes, or everyday casuals, we have something for everyone. Our team is committed to quality craftsmanship and exceptional customer service, ensuring you always find the perfect fit for your lifestyle. Step into a world where style meets substance—because every journey begins with the right pair of shoes.
+            </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10">
+                <div class="p-5 rounded-5 shadow-lg about-main-card position-relative overflow-hidden animate__animated animate__fadeInUp">
+                    
+                    <h2 class="fw-bold mb-3 about-title">
+                        <i class="bi bi-stars me-2 text-warning"></i>
+                        About Our Shoes
+                    </h2>
+                    <p class="mb-3 about-desc">
+                        <span class="about-project-name">Shoe Store</span> is dedicated to providing high-quality, stylish, and comfortable footwear for everyone. We believe the right pair of shoes can boost your confidence and support your journey, wherever you go.
+                    </p>
+                    <div class="row mt-4 about-z-1">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center bg-light rounded-4 p-3 shadow-sm h-100 animate__animated animate__zoomIn">
+                                <span class="display-6 me-3 text-primary animate__animated animate__bounceIn">
+                                    <i class="bi bi-lightbulb-fill"></i>
+                                </span>
+                                <div>
+                                    <h5 class="mb-1 fw-semibold about-feature-title">Innovative Designs</h5>
+                                    <p class="mb-0 small text-muted">Discover shoes that blend fashion with function for every occasion.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center bg-light rounded-4 p-3 shadow-sm h-100 animate__animated animate__zoomIn about-delay">
+                                <span class="display-6 me-3 text-success animate__animated animate__bounceIn about-delay">
+                                    <i class="bi bi-people-fill"></i>
+                                </span>
+                                <div>
+                                    <h5 class="mb-1 fw-semibold about-feature-title2">Customer Focused</h5>
+                                    <p class="mb-0 small text-muted">We listen to your needs and deliver comfort, durability, and style.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 d-flex flex-wrap gap-3 about-z-1">
+                        <a href="/contact/" class="btn btn-outline-primary btn-lg px-4 animate__animated animate__pulse animate__infinite">
+                            <i class="bi bi-envelope-fill me-2"></i>Contact Us
+                        </a>
+                        <a href="/products/" class="btn btn-gradient btn-lg px-4 about-projects-btn shadow-sm">
+                            <i class="bi bi-folder2-open me-2"></i>See Shoes
+                        </a>
+                    </div>
+                    <!-- Decorative bottom wave -->
+                    <svg class="about-svg-bottom" height="40" viewBox="0 0 600 40" fill="none">
+                        <path d="M0 20 Q150 40 300 20 T600 20 V40 H0 Z" fill="#e3f2fd"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+{% endblock %}

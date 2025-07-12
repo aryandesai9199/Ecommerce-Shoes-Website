@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+{% block start%}
+    <h1>This is a Home page of html</h1>
+
+    <a href="/about/">
+        About
+    </a>
+    |
+    <a href="/contact/">
+        Contact
+    </a>
+
+    <br><br><br>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>sr.no</th>
+            <th>product</th>
+            <th>price</th>
+            <th>catagary</th>
+        </tr>
+        {%for product in products%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td {%if product.price >= 10000%} style="background:green" {%else%} style="background:red" {%endif%} >
+                {%if product.price >= 10000%}
+                high
+                {%else%}
+                Low
+                {%endif%}
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+
+{% endblock %}

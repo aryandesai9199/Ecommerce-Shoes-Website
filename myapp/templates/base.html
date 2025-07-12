@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP India</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        background-color: black;
+        color: white;
+        padding-block: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+</style>
+<body>
+
+    <header>
+        <h1>Aryan Desai</h3>
+
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
+                <li><a href="/demo1" style="color: white; text-decoration: none;">Home</a></li>
+                <li><a href="/about" style="color: white; text-decoration: none;">About</a></li>
+                <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block start %}
+
+    {% endblock%}
+
+
+</body>
+</html>
