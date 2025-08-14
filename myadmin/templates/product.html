@@ -12,6 +12,9 @@
         th,tr,td{
             border: 1px solid black;
         }
+        .w-10{
+            width: 20%;
+        }
     </style>
 </head>
 <body>
@@ -40,21 +43,32 @@
                     <tr>
                         <td>{{forloop.counter}}</td>
                         <td class="fw-semibold">{{product.prdName}}</td>
-                        <td>₹{{product.prdPrice}}</td>
+                        <td class="text-center">$<s>{{product.prdOfferPrice}} </s>${{product.prdPrice}}</td>
                         <td class="text-center">
                                 <span class="btn bg-secondary text-white">{{product.prdIsoffer}}</span>
                         </td>
                         <td style="width: 120px;">
                             {% if product.prdImage %}
-                            <img src="{{product.prdImage.url}}" alt="Product Image" class="rounded-3 border" style="width: 100px; height: 60px; object-fit: cover;">
+                            <img src="{{product.prdImage.url}}" alt="Product Image" class="rounded-3 border" style="width: 120px; height: 70px; object-fit: cover;">
                             {% else %}
                             <span class="text-muted">No Image</span>
                             {% endif %}
                         </td>
                         <td class="text-center">
-                                <span class="btn bg-warning text-dark">{{product.prdStatus}}</span>
+                            {% if product.prdLatest == 1 %}
+                                <span class="btn bg-warning text-dark">Latest</span>
+                            {% endif %}
+                            {% if product.prdFeature == 1 %}
+                                <span class="btn bg-warning text-dark my-2">Feature</span>
+                            {% endif %}
+                            {% if product.prdBlog == 1 %}
+                                <span class="btn bg-warning text-dark">Blog</span>
+                            {% endif %}
+                            {% if product.prdLatest != 1 and product.prdFeature != 1 and product.prdBlog != 1 %}
+                                <span class="btn bg-warning text-dark">Nothing</span>
+                            {% endif %}
                         </td>
-                        <td class="text-center">
+                        <td class="text-center w-10">
                             <a href="/myadmin/update_product/{{product.id}}/" class="btn btn-sm btn-success me-3">
                                 <i class="fa fa-edit"></i> Update
                             </a>

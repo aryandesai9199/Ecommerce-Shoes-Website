@@ -1,0 +1,36 @@
+{% extends "Main.html" %}
+{% block start %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+</head>
+<body>
+    {% for dynemic in dy_detail %}
+        <div class="container my-5">
+            <div class="card shadow-lg">
+            <div class="row g-0">
+                <div class="col-md-5">
+                <img src="{{ dynemic.prdImage.url }}" class="img-fluid rounded-start" alt="{{ dynemic.prdName }}">
+                </div>
+                <div class="col-md-7">
+                <div class="card-body">
+                    <h2 class="card-title mb-3">{{ dynemic.prdName }}</h2>
+                    <hr>
+                    <p class="card-text"><strong>Description:</strong> {{ dynemic.prdDescription }}</p>
+                    <p class="card-text"><strong>Price:</strong> <s>₹{{ dynemic.prdPrice }}</s> {{ dynemic.prdOfferPrice }}</p>
+                    <a href="#" class="btn btn-primary mt-4">Shop now</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
+
+{% endblock %}

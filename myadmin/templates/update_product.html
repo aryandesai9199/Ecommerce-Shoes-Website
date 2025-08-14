@@ -33,7 +33,7 @@
                 <div class="card-header text-center py-4" style="background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%); border-top-left-radius: 2rem; border-top-right-radius: 2rem;">
                     <h3 class="fw-bold text-white mb-0">
                         <span class="me-2"><i class="bi bi-box-seam"></i></span>
-                        Add Product
+                        Update Product
                     </h3>
                 </div>
                 <div class="card-body p-5">
@@ -80,11 +80,27 @@
                         </div>
                         <div class="mb-4">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="prdStatus" name="prdStatus" value="True" {% if product.prdStatus %}checked{% endif %}>
-                                <label class="form-check-label fw-semibold" for="prdStatus">
-                                    Status
+                                <input class="form-check-input" type="checkbox" id="prdLatest" name="prdLatest" value="True" {% if product.prdLatest %}checked{% endif %}>
+                                <label class="form-check-label fw-semibold" for="prdLatest">
+                                    Latest Product Status
                                 </label>
                             </div>
+                        </div>
+                        <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="prdFeature" name="prdFeature" value="True" {% if product.prdFeature %}checked{% endif %}>
+                                    <label class="form-check-label fw-semibold" for="prdFeature">
+                                        Feature Product Status
+                                    </label>
+                                </div>
+                        </div>
+                        <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="prdBlog" name="prdBlog" value="True" {% if product.prdBlog %}checked{% endif %}>
+                                    <label class="form-check-label fw-semibold" for="prdBlog">
+                                        Blog Status
+                                    </label>
+                                </div>
                         </div>
                         <div class="mb-4">
                             <label for="prdMailDes" class="form-label fw-semibold">Mail Description</label>

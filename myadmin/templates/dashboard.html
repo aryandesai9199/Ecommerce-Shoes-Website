@@ -1,6 +1,6 @@
 {%extends "master_page.html"%}
 {% block start %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,10 +138,17 @@
         </div>
     </div>
 
+
+    <!-- <textarea id="data"></textarea> -->
+    
+<script src="{% static 'ckeditor/ckeditor-init.js'%}"></script>
+<script src="{% static 'ckeditor/ckeditor/ckeditor.js'%}"></script>
+
+<script>
+    CKEDITOR.replace('data');
+</script>
     
 
-    
-    
 </body>
 </html>
 {% endblock %}

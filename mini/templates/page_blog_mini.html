@@ -43,81 +43,37 @@
     </div>
 
     <div class="container my-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+            {% for dynemic in DynemicBlog %}
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                    <img src="{% static 'images/card-item5.jpg' %}" class="card-img-top" alt="Classic Sneakers">
+                    <img src="{{ dynemic.prdImage.url }}" class="card-img-top" alt="Classic Sneakers">
                     <div class="card-body">
-                        <h5 class="card-title">Classic Sneakers</h5>
-                        <p class="card-text">Timeless design meets comfort. Perfect for everyday wear and casual outings.</p>
+                        <h5 class="card-title">{{dynemic.prdName}}</h5>
+                        <p class="card-text">{{dynemic.prdDescription}}</p>
                     </div>
                     <div class="card-footer bg-white border-0">
-                        <a href="#" class="btn btn-dark w-100">View Details</a>
+                        <a href="/page/view-detail/{{dynemic.id}}" class="btn btn-dark w-100">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="{% static 'images/card-item2.jpg' %}" class="card-img-top" alt="Sporty Trainers">
-                    <div class="card-body">
-                        <h5 class="card-title">Sporty Trainers</h5>
-                        <p class="card-text">Engineered for performance and style. Ideal for running, gym, and active lifestyles.</p>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <a href="#" class="btn btn-dark w-100">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="{% static 'images/card-item3.jpg' %}" class="card-img-top" alt="Elegant Loafers">
-                    <div class="card-body">
-                        <h5 class="card-title">Elegant Loafers</h5>
-                        <p class="card-text">Sophisticated and versatile. Elevate your look for work or special occasions.</p>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <a href="#" class="btn btn-dark w-100">View Details</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for dynemic in DynemicBlog %}
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                    <img src="{% static 'images/card-item5.jpg' %}" class="card-img-top" alt="Classic Sneakers">
+                    <img src="{{ dynemic.prdImage.url }}" class="card-img-top" alt="Classic Sneakers">
                     <div class="card-body">
-                        <h5 class="card-title">Classic Sneakers</h5>
-                        <p class="card-text">Timeless design meets comfort. Perfect for everyday wear and casual outings.</p>
+                        <h5 class="card-title">{{dynemic.prdName}}</h5>
+                        <p class="card-text">{{dynemic.prdDescription}}</p>
                     </div>
                     <div class="card-footer bg-white border-0">
-                        <a href="#" class="btn btn-dark w-100">View Details</a>
+                        <a href="/page/view-detail/{{dynemic.id}}" class="btn btn-dark w-100">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="{% static 'images/card-item2.jpg' %}" class="card-img-top" alt="Sporty Trainers">
-                    <div class="card-body">
-                        <h5 class="card-title">Sporty Trainers</h5>
-                        <p class="card-text">Engineered for performance and style. Ideal for running, gym, and active lifestyles.</p>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <a href="#" class="btn btn-dark w-100">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="{% static 'images/card-item3.jpg' %}" class="card-img-top" alt="Elegant Loafers">
-                    <div class="card-body">
-                        <h5 class="card-title">Elegant Loafers</h5>
-                        <p class="card-text">Sophisticated and versatile. Elevate your look for work or special occasions.</p>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <a href="#" class="btn btn-dark w-100">View Details</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     

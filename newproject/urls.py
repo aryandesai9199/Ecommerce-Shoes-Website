@@ -54,6 +54,7 @@ urlpatterns = [
     path('contact/',views.contact, name='contact'),
     path('shop/',views.shop, name='shop'),
     path("page/", views.page, name="page"),
+    path("page/view-detail/<id>/",views.views_details_blog, name='view-more'),
 
     path('myadmin/',include('myadmin.urls')), 
 

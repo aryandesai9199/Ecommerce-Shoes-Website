@@ -23,38 +23,17 @@
             <h6>Premium Products</h6>
         </div>
         <div class="row g-4">
+            {% for dm in dynemic %}
             <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item8.jpg' %}" class="card-img-top" alt="Featured 1">
+                <div class="card h-100 card-no-border">
+                    <img src="{{ dm.prdImage.url }}" class="card-img-top" alt="Featured 1">
                     <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
+                        <p class="card-text text-bold">{{ dm.prdName }} - <s class="text-muted">${{ dm.prdPrice }}</s>
+                            <b>{{ dm.prdOfferPrice }}</b></p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item5.jpg' %}" class="card-img-top" alt="Featured 2">
-                    <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item4.jpg' %}" class="card-img-top" alt="Featured 3">
-                    <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item6.jpg' %}" class="card-img-top" alt="Featured 5">
-                    <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
@@ -65,38 +44,18 @@
             <h6>Premium Products</h6>
         </div>
         <div class="row g-4">
+            {% for dy in dynemicLatest %}
             <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item6.jpg' %}" class="card-img-top" alt="Featured 1">
+                <div class="card h-100 card-no-border">
+                    <img src="{{ dy.prdImage.url }}" class="card-img-top" alt="Featured 1">
                     <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
+                        <p class="card-text text-bold">{{ dy.prdName }} - <s class="text-muted">${{ dy.prdPrice }}</s>
+                            <b>{{ dy.prdOfferPrice }}</b>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item8.jpg' %}" class="card-img-top" alt="Featured 2">
-                    <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item9.jpg' %}" class="card-img-top" alt="Featured 3">
-                    <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100" style="border: none; border-radius: 0; box-shadow: none;">
-                    <img src="{% static 'images/card-item10.jpg' %}" class="card-img-top" alt="Featured 5">
-                    <div class="card-body">
-                        <p class="card-text">Running shoes for men $99 </p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
