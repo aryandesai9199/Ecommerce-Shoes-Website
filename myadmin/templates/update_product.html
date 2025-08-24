@@ -33,7 +33,7 @@
                 <div class="card-header text-center py-4" style="background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%); border-top-left-radius: 2rem; border-top-right-radius: 2rem;">
                     <h3 class="fw-bold text-white mb-0">
                         <span class="me-2"><i class="bi bi-box-seam"></i></span>
-                        Add Product
+                        Update Product
                     </h3>
                 </div>
                 <div class="card-body p-5">
@@ -95,6 +95,17 @@
                                 </div>
                         </div>
                         <div class="mb-4">
+<<<<<<< HEAD
+=======
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="prdBlog" name="prdBlog" value="True" {% if product.prdBlog %}checked{% endif %}>
+                                    <label class="form-check-label fw-semibold" for="prdBlog">
+                                        Blog Status
+                                    </label>
+                                </div>
+                        </div>
+                        <div class="mb-4">
+>>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e
                             <label for="prdMailDes" class="form-label fw-semibold">Mail Description</label>
                             <textarea class="form-control rounded-4" id="prdMailDes" name="prdMailDes" rows="2" placeholder="Description for email">{{product.prdMailDes}}</textarea>
                         </div>
