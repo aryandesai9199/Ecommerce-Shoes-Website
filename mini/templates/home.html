@@ -1,0 +1,308 @@
+{% extends "Main.html" %}
+{% block start %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Shoes Store</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Oswald", sans-serif;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 8px #00000055;
+        }
+
+        .card {
+            border-radius: 1.5rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .py-6 {
+            padding-top: 5rem !important;
+            padding-bottom: 5rem !important;
+        }
+
+        .main-gradient-bg {
+            background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decorative-shape-1, .decorative-shape-2, .decorative-shape-3, .decorative-shape-4 {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .decorative-shape-1 {
+            top: -60px;
+            left: -60px;
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .decorative-shape-2 {
+            bottom: -50px;
+            right: -50px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .decorative-shape-3 {
+            top: -40px;
+            left: -40px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .decorative-shape-4 {
+            bottom: -30px;
+            right: -30px;
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+        .banner-title {
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        .banner-icon {
+            color: #fff700;
+        }
+
+        .banner-lead {
+            color: #f8f9fa;
+            font-size: 1.35rem;
+        }
+
+        .banner-highlight {
+            color: #fff700;
+        }
+
+        .shop-now-btn, .email-btn {
+            color: #fff;
+            background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
+            border: none;
+            border-radius: 2rem;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 24px rgba(161, 140, 209, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .shop-now-btn:hover, .email-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(120deg, #fbc2eb 0%, #a18cd1 100%);
+        }
+
+        .shop-now-btn .bi, .email-btn .bi {
+            color: #fff700;
+        }
+
+        .banner-img {
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-no-border {
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .discount-section {
+            min-height: 260px;
+            background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .discount-title {
+            color: #fff;
+            letter-spacing: 1px;
+            font-size: 2.5rem;
+        }
+
+        .discount-title .bi {
+            color: #fff700;
+        }
+
+        .discount-lead {
+            color: #f8f9fa;
+            font-size: 1.25rem;
+        }
+
+        .discount-badge {
+            color: #212529;
+            background: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="py-6 main-gradient-bg position-relative overflow-hidden">
+        <div class="decorative-shape-1"></div>
+        <div class="decorative-shape-2"></div>
+        <div class="container position-relative" style="z-index:2;">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h1 class="display-2 fw-bold text-shadow animate__animated animate__fadeInLeft banner-title mb-4" style="line-height:1.1;">
+                        <span class="d-inline-block mb-2">
+                            <i class="bi bi-lightning-charge-fill me-2 banner-icon" style="font-size:2.5rem;"></i>
+                        </span>
+                        <span class="banner-highlight" style="font-size:2.5rem;">Walk Bold</span> <span style="color:#fff;">in Style</span>
+                    </h1>
+                    <p class="lead animate__animated animate__fadeInLeft animate__delay-1s banner-lead mb-4" style="font-size:1.5rem;">
+                        Elevate your look with <span class="fw-bold banner-highlight">premium shoes</span> for every occasion.<br>
+                        <span class="d-inline-block mt-2">Unleash <span class="fw-bold banner-highlight">comfort</span> & <span class="fw-bold banner-highlight">fashion</span> in every step!</span>
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="/shop/" class="btn btn-lg px-5 py-3 fw-semibold shadow animate__animated animate__pulse animate__infinite shop-now-btn mt-3" style="font-size:1.3rem; letter-spacing:1px;">
+                            <i class="bi bi-bag-heart-fill me-2"></i>Shop Now
+                        </a>
+                        <a href="#latest" class="btn btn-lg px-4 py-3 fw-semibold shadow btn-warning mt-3 rounded-pill" style="font-size:1.1rem;">
+                            <i class="bi bi-arrow-down-circle me-2"></i>See Latest
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center animate__animated animate__fadeInRight">
+                    <div class="position-relative d-inline-block">
+                        <div class="rounded-circle shadow-lg" style="background:rgba(255,255,255,0.18); width:420px; height:420px; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:0;"></div>
+                        <img src="{% static 'images/card-item3.jpg' %}" alt="Banner Shoes" class="img-fluid rounded-4 shadow-lg banner-img" style="max-height:380px; border:6px solid #fff7; box-shadow:0 12px 40px #a18cd155; position:relative; z-index:1;">
+                        <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-warning text-dark shadow" style="font-size:1.1rem; padding:.7em 1.2em; right:-1.5rem; top:1.5rem;">
+                            <i class="bi bi-star-fill me-1"></i> Trending
+                        </span>
+                        <span class="position-absolute bottom-0 start-0 translate-middle badge rounded-pill bg-light text-dark shadow" style="font-size:1rem; padding:.6em 1em; left:-1.5rem; bottom:1.5rem;">
+                            <i class="bi bi-fire me-1 text-danger"></i> Hot Picks
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="d-flex align-items-center justify-content-between my-4">
+            <h5 class="fw-bold position-relative d-inline-block">Featured Products
+                <span class="d-block" style="height: 3px; width: 60px; background: #a18cd1;"></span>
+            </h5>
+            <a href="/shop/" class="fw-bold text-dark text-decoration-none">View all</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            {% for dm in dynemic %}
+            <div class="col">
+                <div class="card h-100 card-no-border position-relative" data-aos="zoom-in">
+                    <img src="{{ dm.prdImage.url }}" class="card-img-top" alt="Featured">
+                    <div class="card-body">
+                        <p class="card-text fw-bold">{{ dm.prdName }} - <s class="text-muted">${{ dm.prdPrice }}</s> <b>${{ dm.prdOfferPrice }}</b></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="container my-5 py-5 px-4 d-flex flex-column flex-md-row align-items-center justify-content-between shadow-lg position-relative overflow-hidden discount-section">
+        <div class="decorative-shape-3"></div>
+        <div class="decorative-shape-4"></div>
+        <div class="mb-4 mb-md-0 position-relative" style="z-index: 1;">
+            <h2 class="mb-2 text-shadow fw-bold animate__animated animate__fadeInDown discount-title">
+                <i class="bi bi-ticket-perforated-fill me-2"></i>
+                10% OFF Discount Coupons!
+            </h2>
+            <p class="lead animate__animated animate__fadeInUp discount-lead">
+                Subscribe now and get <span class="fw-bold banner-highlight">10% OFF</span> on all purchases.
+                <span class="badge bg-warning text-dark ms-1 animate__animated animate__flash animate__infinite discount-badge">Limited time offer!</span>
+            </p>
+        </div>
+        <div class="position-relative" style="z-index: 1;">
+            <a href="mailto:your@email.com" class="btn btn-lg btn-light px-5 py-3 fw-semibold shadow animate__animated animate__pulse animate__infinite email-btn">
+                <i class="bi bi-envelope-heart-fill me-2"></i>Email Me
+            </a>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-lg h-100 border-0 position-relative overflow-hidden" data-aos="zoom-in-up">
+                    <img src="{% static 'images/collection-item1.jpg' %}" class="card-img-top rounded-4" alt="Men's Collection" style="object-fit: cover; height: 340px;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(0deg, rgba(161,140,209,0.75) 60%, rgba(251,194,235,0.25) 100%);">
+                        <h4 class="text-white fw-bold mb-2 text-shadow fs-2"><i class="bi bi-person-fill me-2"></i>Men's Collection</h4>
+                        <p class="text-white-50 mb-3">Trendy, comfortable, and durable shoes for every occasion.</p>
+                        <a href="/shop/?category=men" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
+                            Explore <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-lg h-100 border-0 position-relative overflow-hidden" data-aos="zoom-in-down">
+                    <img src="{% static 'images/collection-item2.jpg' %}" class="card-img-top rounded-4" alt="Women's Collection" style="object-fit: cover; height: 340px;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(0deg, rgba(251,194,235,0.75) 60%, rgba(161,140,209,0.25) 100%);">
+                        <h4 class="text-white fw-bold mb-2 text-shadow fs-2"><i class="bi bi-person-hearts me-2"></i>Women's Collection</h4>
+                        <p class="text-white-50 mb-3">Elegant, stylish, and comfortable shoes for every style.</p>
+                        <a href="/shop/?category=women" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
+                            Explore <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="d-flex align-items-center justify-content-between my-4">
+            <h5 class="fw-bold position-relative d-inline-block">Latest Products
+                <span class="d-block" style="height: 3px; width: 60px; background: #a18cd1;"></span>
+            </h5>
+            <a href="/shop/" class="fw-bold text-dark text-decoration-none">View all</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            {% for dy in dynemicLatest %}
+            <div class="col">
+                <div class="card h-100 card-no-border position-relative" data-aos="zoom-in">
+                    <img src="{{ dy.prdImage.url }}" class="card-img-top" alt="Latest">
+                    <div class="card-body">
+                        <p class="card-text fw-bold">{{ dy.prdName }} - <s class="text-muted">${{ dy.prdPrice }}</s> <b>${{ dy.prdOfferPrice }}</b></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

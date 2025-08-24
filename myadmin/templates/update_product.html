@@ -80,11 +80,19 @@
                         </div>
                         <div class="mb-4">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="prdStatus" name="prdStatus" value="True" {% if product.prdStatus %}checked{% endif %}>
-                                <label class="form-check-label fw-semibold" for="prdStatus">
-                                    Status
+                                <input class="form-check-input" type="checkbox" id="prdLatest" name="prdLatest" value="True" {% if product.prdLatest %}checked{% endif %}>
+                                <label class="form-check-label fw-semibold" for="prdLatest">
+                                    Latest Product Status
                                 </label>
                             </div>
+                        </div>
+                        <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="prdFeature" name="prdFeature" value="True" {% if product.prdFeature %}checked{% endif %}>
+                                    <label class="form-check-label fw-semibold" for="prdFeature">
+                                        Feature Product Status
+                                    </label>
+                                </div>
                         </div>
                         <div class="mb-4">
                             <label for="prdMailDes" class="form-label fw-semibold">Mail Description</label>

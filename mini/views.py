@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
+from myadmin.models import *
 
 # Create your views here.   
 
 
 def home(request):
-    return render(request, 'minipro.html')
+    dynemic = Product.objects.filter(prdFeature = 1)[:4]
+    dynemicLatest = Product.objects.filter(prdLatest = 1)[:4]
+    return render(request, 'home.html', {'dynemic': dynemic,'dynemicLatest':dynemicLatest})
 
 
 
@@ -63,7 +66,15 @@ def contact(request):
     return render(request, 'Contact_Mini.html')
 
 def shop(request):
-    return render(request, 'Shop_mini.html')
+    dynemic = Product.objects.filter(prdFeature = 1)
+    dynemicLatest = Product.objects.filter(prdLatest = 1)
+    return render(request, 'Shop_mini.html', {'dynemic': dynemic,'dynemicLatest':dynemicLatest})
 
 def page(request):
-    return render(request, "page_blog_mini.html")
+    dynemic = Product.objects.filter(prdBlog = 1)
+    return render(request, "page_blog_mini.html",{'DynemicBlog':dynemic})
+
+def views_details_blog(request, id):
+    dynemic = Product.objects.filter(prdBlog = 1 ,id = id)
+
+    return render(request, 'view_detail_blog.html',{'dy_detail':dynemic})

@@ -117,7 +117,9 @@ def add_product(request):
         prdIsoffer = request.POST.get('prdIsoffer')
         prdOfferPrice = request.POST.get('prdOfferPrice')
         prdImage = request.FILES.get('prdImage')
-        prdStatus = request.POST.get('prdStatus') 
+        prdLatest = request.POST.get('prdLatest') is not None
+        prdFeature = request.POST.get('prdFeature') is not None
+        prdBlog = request.POST.get('prdBlog') is not None
         prdMailDes = request.POST.get('prdMailDes')
 
 
@@ -128,7 +130,9 @@ def add_product(request):
             prdIsoffer = prdIsoffer,
             prdOfferPrice = prdOfferPrice,
             prdImage = prdImage,
-            prdStatus = prdStatus,
+            prdLatest = prdLatest,
+            prdFeature = prdFeature,
+            prdBlog = prdBlog,
             prdMailDes = prdMailDes
         )
         return redirect("/myadmin/product/")
@@ -151,20 +155,13 @@ def update_product(request, id):
         product.prdPrice = request.POST.get("prdPrice")
         product.prdIsoffer = 'prdIsoffer' in request.POST
         product.prdOfferPrice = request.POST.get("prdOfferPrice")
-        product.prdStatus = 'prdStatus' in request.POST
+        product.prdLatest = 'prdLatest' in request.POST
+        product.prdFeature = 'prdFeature' in request.POST
+        product.prdBlog = 'prdBlog' in request.POST
         product.prdMailDes = request.POST.get("prdMailDes")
         if 'prdImage' in request.FILES:
-            product.prdImage = request.POST.get("prdImage")
+            product.prdImage = request.FILES["prdImage"]
         product.save()
         return redirect("/myadmin/product/")
     return render(request, "update_product.html",context={"product":product})
 
-
-def featured_products(request):
-    return render(request, "Featured_Products.html")
-
-def add_featured_products(request):
-    return render(request, "Add_Featured_Products.html")
-
-def update_featured_products(request):
-    return render(request, "Update_Featured_Products.html")

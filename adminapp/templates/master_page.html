@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/favicon.ico">
+</head>
+<style>
+    header{
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+    .side-bar{
+        height: 100%;
+        width: 250px;
+        background-color: rgb(10, 61, 49);
+        position: fixed;
+        left: 0;
+        display: block;
+    }
+    .main-content{
+        margin-left: 250px;
+    }
+</style>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>Admin panel</h1>
+                <input type="text" class="input h-100 rounded-3" placeholder=" Serach..">
+            </div>
+        </div>
+    </header>
+    <div class="side-bar">
+    </div>
+    <div class="main-content">
+        {% block start %}
+        {% endblock %}
+    </div>
+    
+</body>
+</html>

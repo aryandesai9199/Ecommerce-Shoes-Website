@@ -20,5 +20,7 @@ class Product(models.Model):
     prdIsoffer = models.BooleanField(default=False)
     prdOfferPrice = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     prdImage = models.ImageField(upload_to="prdImage")
-    prdStatus = models.BooleanField(default=False)
+    prdLatest = models.BooleanField(default=False)
+    prdFeature = models.BooleanField(default=False)
+    prdBlog = models.BooleanField(default=False)
     prdMailDes = models.TextField()
