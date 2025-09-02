@@ -117,9 +117,15 @@ def add_product(request):
         prdIsoffer = request.POST.get('prdIsoffer')
         prdOfferPrice = request.POST.get('prdOfferPrice')
         prdImage = request.FILES.get('prdImage')
+<<<<<<< HEAD
+        prdLatest = request.POST.get('prdLatest') is not None
+        prdFeature = request.POST.get('prdFeature') is not None
+        prdBlog = request.POST.get('prdBlog') is not None
+=======
         prdLatest = request.POST.get('prdLatest') 
         prdFeature = request.POST.get('prdFeature')
         prdBlog = request.POST.get('prdBlog')
+>>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e
         prdMailDes = request.POST.get('prdMailDes')
 
 
@@ -160,12 +166,19 @@ def update_product(request, id):
         product.prdBlog = 'prdBlog' in request.POST
         product.prdMailDes = request.POST.get("prdMailDes")
         if 'prdImage' in request.FILES:
+<<<<<<< HEAD
+            product.prdImage = request.FILES["prdImage"]
+=======
             product.prdImage = request.FILES['prdImage']
+>>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e
         product.save()
         return redirect("/myadmin/product/")
     return render(request, "update_product.html",context={"product":product})
 
+<<<<<<< HEAD
+=======
 def page(request):
     dynemic = Product.objects.filter(prdBlog = 1)
     return render(request, "page_blog_mini.html",{'DynemicBlog':dynemic})
 
+>>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e

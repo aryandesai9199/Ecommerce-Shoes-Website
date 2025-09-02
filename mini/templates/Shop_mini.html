@@ -25,11 +25,20 @@
         <div class="row g-4">
             {% for dm in dynemic %}
             <div class="col-md-3">
+<<<<<<< HEAD
+                <div class="card h-100 card-no-border border-0">
+                    <img src="{{ dm.prdImage.url }}" class="card-img-top" alt="Featured 1">
+                    <div class="card-body">
+                        <p class="card-text text-bold">{{ dm.prdName }} - <s class="text-muted">${{ dm.prdPrice }}</s>
+                            <b>{{ dm.prdOfferPrice }}</b>
+                        </p>
+=======
                 <div class="card h-100 card-no-border">
                     <img src="{{ dm.prdImage.url }}" class="card-img-top" alt="Featured 1">
                     <div class="card-body">
                         <p class="card-text text-bold">{{ dm.prdName }} - <s class="text-muted">${{ dm.prdPrice }}</s>
                             <b>{{ dm.prdOfferPrice }}</b></p>
+>>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e
                     </div>
                 </div>
             </div>
@@ -46,7 +55,11 @@
         <div class="row g-4">
             {% for dy in dynemicLatest %}
             <div class="col-md-3">
+<<<<<<< HEAD
+                <div class="card h-100 card-no-border border-0  ">
+=======
                 <div class="card h-100 card-no-border">
+>>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e
                     <img src="{{ dy.prdImage.url }}" class="card-img-top" alt="Featured 1">
                     <div class="card-body">
                         <p class="card-text text-bold">{{ dy.prdName }} - <s class="text-muted">${{ dy.prdPrice }}</s>
