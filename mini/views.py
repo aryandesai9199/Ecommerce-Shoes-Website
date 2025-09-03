@@ -11,11 +11,7 @@ from myadmin.models import *
 def home(request):
     dynemic = Product.objects.filter(prdFeature = 1)[:4]
     dynemicLatest = Product.objects.filter(prdLatest = 1)[:4]
-<<<<<<< HEAD
     return render(request, 'home.html', {'dynemic': dynemic,'dynemicLatest':dynemicLatest})
-=======
-    return render(request, 'index.html', {'dynemic': dynemic,'dynemicLatest':dynemicLatest})
->>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e
 
 
 
@@ -81,9 +77,8 @@ def page(request):
 
 def views_details_blog(request, id):
     dynemic = Product.objects.filter(prdBlog = 1 ,id = id)
-<<<<<<< HEAD
+    return render(request, 'view_detail_blog.html',{'dy_detail':dynemic})   
 
-    return render(request, 'view_detail_blog.html',{'dy_detail':dynemic})
-=======
-    return render(request, 'view_detail_blog.html',{'dy_detail':dynemic})
->>>>>>> de1bc3b6e4a8f1ef05c08c251033e3cd2bdd649e
+def product_detail(request, id):
+    dynemic = Product.objects.filter(id = id)
+    return render(request, 'product_detail.html',{'dy_detail':dynemic})
