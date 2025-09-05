@@ -8,40 +8,45 @@
     <link rel="stylesheet" href="{% static 'icons/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts' %}">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Varela+Round&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <style>
-        *{
-            font-family: "Libre Baskerville", serif;
-        }
+        * { font-family: "Libre Baskerville", serif; }
     </style>
 </head>
 <body>
     <header class="py-3 bg-white shadow-sm">
-        <div class="container d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center text-decoration-none">
-                <img src="{% static 'images/main-logo.png' %}" alt="Logo" style="height: 50px;">
-            </a>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/home/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/about/">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/page/">Page</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/shop/">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/contact/">Contact</a></li>
-                </ul>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white p-0">
+                <a href="/" class="navbar-brand d-flex align-items-center text-decoration-none">
+                    <img src="{% static 'images/main-logo.png' %}" alt="Logo" style="height: 50px; width: auto;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <div class="mx-auto">
+                        <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-center">
+                            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/home/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/about/">About</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/page/">Page</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/shop/">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0 ms-lg-auto">
+                        <a href="/login1/" class="text-dark fs-5" title="Login" aria-label="Login"><i class="fa fa-user"></i></a>
+                        <a href="/cart/" class="text-dark fs-5 position-relative" title="Cart" aria-label="Cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.7em;">0</span>
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <div class="d-flex align-items-center gap-3">
-                <a href="/login1/" class="text-dark fs-5"><i class="fa fa-user"></i></a>
-                <a href="#" class="text-dark fs-5"><i class="fa fa-shopping-cart"></i></a>
-                <a href="#" class="text-dark fs-5"><i class="fa fa-search"></i></a>
-            </div>
         </div>
     </header>
     {% block start%}
-
     {% endblock%}
-    
+
     <hr style="margin: 0;">
     <footer class="bg-light py-5">
         <div class="container">
@@ -105,10 +110,7 @@
         </div>
     </footer>
 
-    <script src="{% static 'bs5/js/bs5.bundle.min.js' %}"></script>
-
-
+    <script src="{% static 'bs5/js/bootstrap.bundle.min.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
 </body>
 </html>
