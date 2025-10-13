@@ -221,6 +221,9 @@
                     <div class="card-body">
                         <p class="card-text fw-bold">{{ dm.prdName }} - <s class="text-muted">${{ dm.prdPrice }}</s> <b>${{ dm.prdOfferPrice }}</b></p>
                     </div>
+                    <a href="/home/view-detail/{{ dm.id }}" class="btn px-3 py-1 fw-semibold shadow shop-now-btn w-100 mt-2" style="font-size:0.95rem;">
+                        <i class="bi bi-bag-heart-fill me-2"></i>Shop Now
+                    </a>
                 </div>
             </div>
             {% endfor %}
@@ -255,7 +258,7 @@
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(0deg, rgba(161,140,209,0.75) 60%, rgba(251,194,235,0.25) 100%);">
                         <h4 class="text-white fw-bold mb-2 text-shadow fs-2"><i class="bi bi-person-fill me-2"></i>Men's Collection</h4>
                         <p class="text-white-50 mb-3">Trendy, comfortable, and durable shoes for every occasion.</p>
-                        <a href="/shop/?category=men" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
+                        <a href="/shop/category" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
                             Explore <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -267,7 +270,7 @@
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(0deg, rgba(251,194,235,0.75) 60%, rgba(161,140,209,0.25) 100%);">
                         <h4 class="text-white fw-bold mb-2 text-shadow fs-2"><i class="bi bi-person-hearts me-2"></i>Women's Collection</h4>
                         <p class="text-white-50 mb-3">Elegant, stylish, and comfortable shoes for every style.</p>
-                        <a href="/shop/?category=women" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
+                        <a href="/shop/category" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
                             Explore <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -291,6 +294,9 @@
                     <div class="card-body">
                         <p class="card-text fw-bold">{{ dy.prdName }} - <s class="text-muted">${{ dy.prdPrice }}</s> <b>${{ dy.prdOfferPrice }}</b></p>
                     </div>
+                    <a href="/home/view-detail/{{ dy.id }}" class="btn px-3 py-1 fw-semibold shadow shop-now-btn w-100 mt-2" style="font-size:0.95rem;">
+                        <i class="bi bi-bag-heart-fill me-2"></i>Shop Now
+                    </a>
                 </div>
             </div>
             {% endfor %}

@@ -48,6 +48,8 @@ urlpatterns = [
 
 
     path('home/', views.home, name='home'),
+    path('', views.home, name='home'),
+    path('home/view-detail/<id>/',views.view_details_product, name='view-product'),
     path('login1/',views.login1, name='login1'),
     path('register1/',views.register1, name='register1'),
     path('about/',views.about, name='about'),
@@ -55,6 +57,14 @@ urlpatterns = [
     path('shop/',views.shop, name='shop'),
     path("page/", views.page, name="page"),
     path("page/view-detail/<id>/",views.views_details_blog, name='view-more'),
+    path('shop/category/', views.Category_collection, name='Category_collection'),
+    path("shop/category/view-detail/<id>/",views.view_details_product, name='view-product'),
+
+    path('cart/', views.cart, name='cart'),
+    path('view-cart/', views.view_cart, name='view_cart'),
+    path('add-to-cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('remove-from-cart/<int:product_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('update-cart/<int:product_id>/', views.update_cart, name='update_cart'),
 
     path('myadmin/',include('myadmin.urls')), 
 

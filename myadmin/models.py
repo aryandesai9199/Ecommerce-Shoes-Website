@@ -24,3 +24,5 @@ class Product(models.Model):
     prdFeature = models.BooleanField(default=False)
     prdBlog = models.BooleanField(default=False)
     prdMailDes = models.TextField()
+    prdCatMale = models.BooleanField(default=False)
+    prdCatFemale = models.BooleanField(default=False)

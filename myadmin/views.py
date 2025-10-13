@@ -120,6 +120,8 @@ def add_product(request):
         prdLatest = request.POST.get('prdLatest') is not None
         prdFeature = request.POST.get('prdFeature') is not None
         prdBlog = request.POST.get('prdBlog') is not None
+        prdCatMale = request.POST.get('prdCatMale') is not None
+        prdCatFemale = request.POST.get('prdCatFemale') is not None
         prdMailDes = request.POST.get('prdMailDes')
 
 
@@ -133,6 +135,8 @@ def add_product(request):
             prdLatest = prdLatest,
             prdFeature = prdFeature,
             prdBlog = prdBlog,
+            prdCatMale = prdCatMale,
+            prdCatFemale = prdCatFemale,
             prdMailDes = prdMailDes
         )
         return redirect("/myadmin/product/")
@@ -158,6 +162,8 @@ def update_product(request, id):
         product.prdLatest = 'prdLatest' in request.POST
         product.prdFeature = 'prdFeature' in request.POST
         product.prdBlog = 'prdBlog' in request.POST
+        product.prdCatMale = 'prdCatMale' in request.POST
+        product.prdCatFemale = 'prdCatFemale' in request.POST
         product.prdMailDes = request.POST.get("prdMailDes")
         if 'prdImage' in request.FILES:
             product.prdImage = request.FILES["prdImage"]

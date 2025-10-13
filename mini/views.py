@@ -4,6 +4,7 @@ from myadmin.models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from myadmin.models import *
+from django.http import JsonResponse
 
 # Create your views here.   
 
@@ -13,6 +14,52 @@ def home(request):
     dynemicLatest = Product.objects.filter(prdLatest = 1)[:4]
     return render(request, 'home.html', {'dynemic': dynemic,'dynemicLatest':dynemicLatest})
 
+
+def cart(request):
+    cart = request.session.get('cart', {})
+    products = Product.objects.filter(id__in=cart.keys())
+    cart_items = []
+    for product in products:
+        cart_items.append({
+            'product': product,
+            'quantity': cart[str(product.id)],
+        })
+    return render(request, 'cart.html', {'cart_items': cart_items})
+
+def add_to_cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    cart = request.session.get('cart', {})
+    cart[str(product_id)] = cart.get(str(product_id), 0) + 1
+    request.session['cart'] = cart
+    return JsonResponse({'success': True, 'cart': cart})
+
+def remove_from_cart(request, product_id):
+    cart = request.session.get('cart', {})
+    if str(product_id) in cart:
+        del cart[str(product_id)]
+        request.session['cart'] = cart
+    return JsonResponse({'success': True, 'cart': cart})
+
+def update_cart(request, product_id):
+    quantity = int(request.POST.get('quantity', 1))
+    cart = request.session.get('cart', {})
+    if quantity > 0:
+        cart[str(product_id)] = quantity
+    else:
+        cart.pop(str(product_id), None)
+    request.session['cart'] = cart
+    return JsonResponse({'success': True, 'cart': cart})
+
+def view_cart(request):
+    cart = request.session.get('cart', {})
+    products = Product.objects.filter(id__in=cart.keys())
+    cart_items = []
+    for product in products:
+        cart_items.append({
+            'product': product,
+            'quantity': cart[str(product.id)],
+        })
+    return render(request, 'cart.html', {'cart_items': cart_items})
 
 
 def login1(request):
@@ -78,3 +125,12 @@ def page(request):
 def views_details_blog(request, id):
     dynemic = Product.objects.filter(prdBlog = 1 ,id = id)
     return render(request, 'view_detail_blog.html',{'dy_detail':dynemic})
+
+def view_details_product(request, id):
+    dynemic = Product.objects.filter(id = id)
+    return render(request, 'view_detail_product.html',{'dy_detail':dynemic})
+
+def Category_collection(request):
+    dynemicMale = Product.objects.filter(prdCatMale = 1)
+    dynemicFemale = Product.objects.filter(prdCatFemale = 1)
+    return render(request, 'Category_collection.html', {'dynemicMale':dynemicMale , 'dynemicFemale':dynemicFemale})

@@ -1,0 +1,55 @@
+{% extends 'Main.html' %}
+{% block start %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - detail</title>
+</head>
+<body>
+    <h2>Your Cart</h2>
+    {% if cart.items.all %}
+    <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse;">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.items.all %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>
+                    <form method="post" action="{% url 'update_cart' item.id %}">
+                        {% csrf_token %}
+                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" style="width:60px;">
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+                <td>{{ item.product.price }}</td>
+                <td>{{ item.total_price }}</td>
+                <td>
+                    <a href="{% url 'remove_from_cart' item.id %}" onclick="return confirm('Remove this item from cart?');">Remove</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 style="text-align:right;">Total: {{ cart.total_price }}</h3>
+    {% else %}
+    <p>Your cart is empty.</p>
+    {% endif %}
+</body>
+
+
+</body>
+</html>
+
+{% endblock %}

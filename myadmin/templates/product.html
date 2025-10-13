@@ -37,7 +37,8 @@
                         <th scope="col">In Offer</th>
                         <th scope="col">Image</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Category</th>
+                        <th scope="col  ">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,6 +69,15 @@
                             {% endif %}
                             {% if product.prdLatest != 1 and product.prdFeature != 1 and product.prdBlog != 1 %}
                                 <span class="btn bg-warning text-dark">Nothing</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if product.prdCatMale == 1 and product.prdCatFemale == 1 %}
+                                <span class="btn bg-warning text-dark">All</span>
+                            {% elif product.prdCatMale == 1 %}
+                                <span class="btn bg-warning text-dark">Male</span>
+                            {% elif product.prdCatFemale == 1 %}
+                                <span class="btn bg-warning text-dark">Female</span>
                             {% endif %}
                         </td>
                         <td class="text-center w-25">

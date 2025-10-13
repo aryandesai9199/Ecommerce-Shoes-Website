@@ -1,0 +1,180 @@
+{% extends 'Main.html' %}
+{% block start %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category - Stylish Shoes</title>
+</head>
+
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Oswald", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            min-height: 100vh;
+        }
+
+        .btn-group .btn {
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-group .btn.active,
+        .btn-group .btn:focus {
+            background: #6366f1;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+        }
+
+        .category-content {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+            padding: 2rem;
+            margin-top: 1.5rem;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #6366f1;
+            font-weight: 700;
+        }
+    </style>
+    <div class="container my-5">
+        <div class="d-flex flex-column align-items-center">
+            <h1 class="mb-4 fw-bold" style="color:#3730a3;">Stylish Shoes Collection</h1>
+            <div class="btn-group mb-4 shadow" role="group" aria-label="Category filter">
+                <button type="button" class="btn btn-outline-primary active" id="btn-all"
+                    onclick="showCategory('all')">All</button>
+                <button type="button" class="btn btn-outline-primary" id="btn-men"
+                    onclick="showCategory('men')">Men</button>
+                <button type="button" class="btn btn-outline-primary" id="btn-women"
+                    onclick="showCategory('women')">Women</button>
+            </div>
+        </div>
+        <div id="all-category" class="category-content">
+            <h2>All Shoes</h2>
+            <p>Browse our complete range of shoes for everyone, featuring top brands and styles.</p>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% for dm in dynemicMale %}
+                <div class="col">
+                    <div class="card h-100 shadow" style="border-radius: 1rem; overflow: hidden;">
+                        <img src="{% if dm.prdImage %}{{ dm.prdImage.url }}{% else %}{% static 'default-shoe.jpg' %}{% endif %}"
+                            class="card-img-top" alt="{{ dm.prdName }}" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" style="color: #3730a3;">{{ dm.prdName }}</h5>
+                            <p class="card-text mb-2">
+                                <span class="text-muted" style="text-decoration: line-through;">₹ {{ dm.prdPrice }}</span>
+                                <span class="ms-2 fw-bold" style="color: #16a34a;">₹{{ dm.prdOfferPrice }}</span>
+                            </p>
+                            <a href="/shop/category/view-detail/{{dm.id}}" class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
+                {% for dm in dynemicFemale %}
+                <div class="col">
+                    <div class="card h-100 shadow" style="border-radius: 1rem; overflow: hidden;">
+                        <img src="{% if dm.prdImage %}{{ dm.prdImage.url }}{% else %}{% static 'default-shoe.jpg' %}{% endif %}"
+                            class="card-img-top" alt="{{ dm.prdName }}" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" style="color: #3730a3;">{{ dm.prdName }}</h5>
+                            <p class="card-text mb-2">
+                                <span class="text-muted" style="text-decoration: line-through;">₹ {{ dm.prdPrice }}</span>
+                                <span class="ms-2 fw-bold" style="color: #16a34a;">₹ {{ dm.prdOfferPrice }}</span>
+                            </p>
+                            <a href="/shop/category/view-detail/{{dm.id}}" class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="men-category" class="category-content" style="display:none;">
+            <h2>Men's Shoes</h2>
+            <p>Discover our exclusive collection of stylish men's shoes, perfect for every occasion.</p>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% for dm in dynemicMale %}
+                <div class="col">
+                    <div class="card h-100 shadow" style="border-radius: 1rem; overflow: hidden;">
+                        <img src="{% if dm.prdImage %}{{ dm.prdImage.url }}{% else %}{% static 'default-shoe.jpg' %}{% endif %}"
+                            class="card-img-top" alt="{{ dm.prdName }}" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" style="color: #3730a3;">{{ dm.prdName }}</h5>
+                            <p class="card-text mb-2">
+                                <span class="text-muted" style="text-decoration: line-through;">${{ dm.prdPrice }}</span>
+                                <span class="ms-2 fw-bold" style="color: #16a34a;">$ {{ dm.prdOfferPrice }}</span>
+                            </p>
+                            <a href="/shop/category/view-detail/{{dm.id}}" class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="women-category" class="category-content" style="display:none;">
+            <h2>Women's Shoes</h2>
+            <p>Explore the latest trends in women's footwear, combining comfort and elegance.</p>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+            {% for dm in dynemicFemale %}
+                <div class="col">
+                    <div class="card h-100 shadow" style="border-radius: 1rem; overflow: hidden;">
+                        <img src="{% if dm.prdImage %}{{ dm.prdImage.url }}{% else %}{% static 'default-shoe.jpg' %}{% endif %}"
+                            class="card-img-top" alt="{{ dm.prdName }}" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" style="color: #3730a3;">{{ dm.prdName }}</h5>
+                            <p class="card-text mb-2">
+                                <span class="text-muted" style="text-decoration: line-through;">₹{{ dm.prdPrice }}</span>
+                                <span class="ms-2 fw-bold" style="color: #16a34a;">₹{{ dm.prdOfferPrice }}</span>
+                            </p>
+                            <a href="/shop/category/view-detail/{{dm.id}}" class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+        function showCategory(category) {
+            document.getElementById('all-category').style.display = (category === 'all') ? 'block' : 'none';
+            document.getElementById('men-category').style.display = (category === 'men') ? 'block' : 'none';
+            document.getElementById('women-category').style.display = (category === 'women') ? 'block' : 'none';
+
+            // Button active state
+            document.getElementById('btn-all').classList.toggle('active', category === 'all');
+            document.getElementById('btn-men').classList.toggle('active', category === 'men');
+            document.getElementById('btn-women').classList.toggle('active', category === 'women');
+        }
+    </script>
+</body>
+
+</html>
+
+{% endblock %}
