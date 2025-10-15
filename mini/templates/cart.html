@@ -10,42 +10,51 @@
     <title>Cart - detail</title>
 </head>
 <body>
-    <h2>Your Cart</h2>
-    {% if cart.items.all %}
-    <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse;">
+    <div style="max-width:800px; margin:40px auto; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-radius:10px; padding:30px;">
+    <h2 style="text-align:center; color:#333; margin-bottom:30px;">🛒 Your Cart</h2>
+    {% if cart_items %}
+    <table style="width:100%; border-collapse:collapse; font-family:sans-serif;">
         <thead>
-            <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-                <th>Action</th>
+            <tr style="background:#f5f5f5;">
+                <th style="padding:12px;">Product</th>
+                <th style="padding:12px;">Quantity</th>
+                <th style="padding:12px;">Price</th>
+                <th style="padding:12px;">Total</th>
+                <th style="padding:12px;">Action</th>
             </tr>
         </thead>
         <tbody>
-            {% for item in cart.items.all %}
-            <tr>
-                <td>{{ item.product.name }}</td>
-                <td>
-                    <form method="post" action="{% url 'update_cart' item.id %}">
+            {% for item in cart_items %}
+            <tr style="border-bottom:1px solid #f0f0f0;">
+                <td style="padding:10px; display:flex; align-items:center; gap:10px;">
+                    <img src="{{ item.product.prdImage.url }}" alt="{{ item.product.prdName }}" style="width:40px; height:40px; object-fit:cover; border-radius:5px;">
+                    {{ item.product.prdName }}
+                </td>
+                <td style="padding:10px;">
+                    <form method="post" action="{% url 'update_cart' item.product.id %}" style="display:flex; align-items:center; gap:8px;">
                         {% csrf_token %}
-                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" style="width:60px;">
-                        <button type="submit">Update</button>
+                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" style="width:60px; padding:5px; border-radius:4px; border:1px solid #ccc;">
+                        <button type="submit" style="background:#007bff; color:#fff; border:none; border-radius:4px; padding:6px 12px; cursor:pointer;">Update</button>
                     </form>
                 </td>
-                <td>{{ item.product.price }}</td>
-                <td>{{ item.total_price }}</td>
-                <td>
-                    <a href="{% url 'remove_from_cart' item.id %}" onclick="return confirm('Remove this item from cart?');">Remove</a>
+                <td style="padding:10px;">₹{{ item.product.prdPrice }}</td>
+                <td style="padding:10px;">₹{{ item.total_price }}</td>
+                <td style="padding:10px;">
+                    <a href="{% url 'remove_from_cart' item.product.id %}" onclick="return confirm('Remove this item from cart?');" style="color:#dc3545; text-decoration:none; font-weight:bold;">Remove</a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <h3 style="text-align:right;">Total: {{ cart.total_price }}</h3>
+    <h3 style="text-align:right; margin-top:25px; color:#007bff;">Total: ₹{{ total_price }}</h3>
+    <div style="text-align:right; margin-top:20px;">
+        <a href="{% url 'checkout' %}" style="background:#28a745; color:#fff; padding:10px 24px; border-radius:5px; text-decoration:none; font-weight:bold; box-shadow:0 2px 4px rgba(40,167,69,0.08);">Proceed to Checkout</a>
+    </div>
     {% else %}
-    <p>Your cart is empty.</p>
+    <p style="text-align:center; color:#888; font-size:18px;">Your cart is empty.</p>
     {% endif %}
+</div>
+
 </body>
 
 

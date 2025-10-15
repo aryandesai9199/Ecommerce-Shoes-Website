@@ -258,7 +258,7 @@
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(0deg, rgba(161,140,209,0.75) 60%, rgba(251,194,235,0.25) 100%);">
                         <h4 class="text-white fw-bold mb-2 text-shadow fs-2"><i class="bi bi-person-fill me-2"></i>Men's Collection</h4>
                         <p class="text-white-50 mb-3">Trendy, comfortable, and durable shoes for every occasion.</p>
-                        <a href="/shop/category" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
+                        <a href="/shop/category/#men" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
                             Explore <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -270,7 +270,7 @@
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(0deg, rgba(251,194,235,0.75) 60%, rgba(161,140,209,0.25) 100%);">
                         <h4 class="text-white fw-bold mb-2 text-shadow fs-2"><i class="bi bi-person-hearts me-2"></i>Women's Collection</h4>
                         <p class="text-white-50 mb-3">Elegant, stylish, and comfortable shoes for every style.</p>
-                        <a href="/shop/category" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
+                        <a href="/shop/category/#women" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
                             Explore <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -279,7 +279,7 @@
         </div>
     </section>
 
-    <section class="container my-5">
+    <section class="container my-5" id="latest">
         <div class="d-flex align-items-center justify-content-between my-4">
             <h5 class="fw-bold position-relative d-inline-block">Latest Products
                 <span class="d-block" style="height: 3px; width: 60px; background: #a18cd1;"></span>
@@ -305,6 +305,19 @@
 
     <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      document.querySelectorAll('a[href="#latest"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.getElementById('latest');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+
     <script>
       AOS.init();
     </script>

@@ -171,7 +171,26 @@
             document.getElementById('btn-all').classList.toggle('active', category === 'all');
             document.getElementById('btn-men').classList.toggle('active', category === 'men');
             document.getElementById('btn-women').classList.toggle('active', category === 'women');
+
+            // Update URL hash
+            if (category === 'all') {
+            window.location.hash = '#all';
+            } else if (category === 'men') {
+            window.location.hash = '#men';
+            } else if (category === 'women') {
+            window.location.hash = '#women';
+            }
         }
+
+        // Show category based on URL hash on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash === 'men' || hash === 'women') {
+            showCategory(hash);
+            } else {
+            showCategory('all');
+            }
+        });
     </script>
 </body>
 
