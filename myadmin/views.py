@@ -140,7 +140,7 @@ def add_product(request):
             prdMailDes = prdMailDes
         )
         return redirect("/myadmin/product/")
-    return render(request, "add_product.html")
+    return render(request, "Add_product.html")
 
 def delete_product(request, id):
     if not request.session.get("name"):
